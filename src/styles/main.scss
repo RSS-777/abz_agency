@@ -1,0 +1,28 @@
+@use './normalize' as *;
+@use './variables' as *;
+@use './mixins' as *;
+@use './fonts' as *;
+@use './media' as *;
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: $background-color;
+}
+
+p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+}

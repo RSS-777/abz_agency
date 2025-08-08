@@ -1,0 +1,45 @@
+@use '../../styles/media' as *;
+@use '../../styles/variables' as *;
+
+.header {
+    background-color: $header-bg-color;
+
+    &__container {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        max-width: 1170px;
+        margin: auto;
+
+        @include tablet {
+            padding: 0 20px;
+        }
+
+        @include laptop {
+            padding: 0 30px;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__images {
+        width: 104px;
+        height: 26px;
+        margin-left: 5px;
+
+        @include desktop {
+            margin-left: 0;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 10px;
+        height: 34px;
+        width: fit-content;
+    }
+}

@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+.button {
+    background-color: $button-bg;
+    height: 34px;
+    padding: 0 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $button-bg-hover;
+    }
+
+    &:disabled {
+        background-color: $button-bg-disabled;
+        pointer-events: none;
+    }
+}

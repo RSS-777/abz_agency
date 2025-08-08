@@ -1,0 +1,47 @@
+@use '../../styles/variables' as *;
+
+.users {
+    margin-top: 140px;
+
+    &__title {
+        color: $users-title-color;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+
+    &__img {
+       width: 70px;
+       height: 70px;
+       border-radius: 50%;
+    }
+
+    &__position {
+
+    }
+
+    &__name {
+
+    }
+
+    &__block-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__email {
+
+    }
+
+    &__phone {
+
+    }
+}
