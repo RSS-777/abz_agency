@@ -2,7 +2,7 @@
 @use '../../styles/media' as *;
 
 .section-hero {
-    background-image: url('../../assets/images/Hero.jpeg');
+    background-image: url('../../assets/images/hero-400.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -44,7 +44,16 @@
         z-index: 2;
     }
 
+    @include tablet {
+        background-image: url('../../assets/images/hero-800.webp');
+    }
+
     @include laptop {
         height: 650px;
+        background-image: url('../../assets/images/hero-1170.webp');
+    }
+
+    @include desktop {
+        background-image: url('../../assets/images/hero-1170.webp');
     }
 }

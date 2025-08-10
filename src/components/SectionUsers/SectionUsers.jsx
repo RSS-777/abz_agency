@@ -1,17 +1,20 @@
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './SectionUsers.module.scss';
 import { getUsers } from '../../api/usersApi';
 import { Button } from "../Button/Button";
-import { useEffect, useState } from 'react';
 
 export const SectionUsers = () => {
-    const [page, setPage] = useState(1);
-    const [users, setUsers] = useState([]);
-    const [totalPages, setTotalPages] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const [page, setPage] = useState(1)
+    const [users, setUsers] = useState([])
+    const [totalPages, setTotalPages] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
+    const dispatch = useDispatch()
+    const isSuccess = useSelector(state => state.auth.isSuccess)
 
     const fetchUsers = async (currentPage) => {
-        setIsLoading(true);
-        const response = await getUsers(currentPage, 6);
+        setIsLoading(true)
+        const response = await getUsers(currentPage, 6)
 
         if (response.success) {
             const sortUsers = response.users.sort((a, b) => new Date(b.registration_timestamp) - new Date(a.registration_timestamp))
@@ -19,20 +22,30 @@ export const SectionUsers = () => {
             if (currentPage === 1) {
                 setUsers(sortUsers);
             } else {
-                setUsers(prev => [...prev, ...sortUsers]);
+                setUsers(prev => [...prev, ...sortUsers])
             }
             setTotalPages(response.totalPages);
         } // Error handling is done inside the API function (getUsers)
 
-        setIsLoading(false);
+        setIsLoading(false)
     };
 
     useEffect(() => {
-        fetchUsers(page);
+        fetchUsers(page)
     }, [page]);
 
+    useEffect(() => {
+        if (isSuccess) {
+            if (page === 1) {
+                fetchUsers(1);
+            } else {
+                setPage(1);
+            }
+        }
+    }, [isSuccess]);
+
     const handleShowMore = () => {
-        setPage(prev => prev + 1);
+        setPage(prev => prev + 1)
     };
 
     const isLastPage = totalPages !== null && page >= totalPages;
@@ -56,12 +69,11 @@ export const SectionUsers = () => {
                     : <p className={styles['users__loading']}>Loading...</p>
                 }
             </div>
-
             {!isLastPage && !isLoading && (
                 <div className={styles['users__button-wrapper']}>
                     <Button label='Show more' onClick={handleShowMore} />
                 </div>
             )}
         </section>
-    );
+    )
 };

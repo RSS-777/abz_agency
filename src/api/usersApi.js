@@ -41,7 +41,6 @@ export const getUsers = async (page = 1, count = 6) => {
 };
 
 export const postUser = async (data) => {
-console.log('data 1', data)
     try {
         const tokenRes = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token');
         if (!tokenRes.ok) throw new Error('Failed to get token.');
@@ -53,10 +52,6 @@ console.log('data 1', data)
         formData.append('phone', data.phone)
         formData.append('position_id', Number(data.position));
         formData.append('photo', data.upload[0])
-
-        for (const [key, value] of formData.entries()) {
-  console.log(key, value);
-}
 
         const response = await fetch(
             'https://frontend-test-assignment-api.abz.agency/api/v1/users',
