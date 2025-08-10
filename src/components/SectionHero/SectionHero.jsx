@@ -4,7 +4,10 @@ import { Button } from '../Button/Button';
 export const SectionHero = () => {
     const handleScrollToSignUp = () => {
         const element = document.getElementById('sign-up');
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
+
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (

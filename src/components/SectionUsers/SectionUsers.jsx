@@ -14,10 +14,15 @@ export const SectionUsers = () => {
         const response = await getUsers(currentPage, 6);
 
         if (response.success) {
-            setUsers(prev => [...prev, ...response.users]);
+            const sortUsers = response.users.sort((a, b) => new Date(b.registration_timestamp) - new Date(a.registration_timestamp))
+
+            if (currentPage === 1) {
+                setUsers(sortUsers);
+            } else {
+                setUsers(prev => [...prev, ...sortUsers]);
+            }
             setTotalPages(response.totalPages);
-            console.log('users', response.users)
-        }
+        } // Error handling is done inside the API function (getUsers)
 
         setIsLoading(false);
     };
@@ -40,11 +45,11 @@ export const SectionUsers = () => {
                     ? users.map((user, index) => (
                         <div key={`${user.id}-${index}`} className={styles['user-card']}>
                             <img src={user.photo} alt={user.name} className={styles['user-card__img']} />
-                            <p className={styles['user-card__name']}>{user.name}</p>
+                            <p>{user.name}</p>
                             <p className={styles['user-card__block-info']}>
-                                <span className={styles['user-card__position']}>{user.position}</span>
-                                <span className={styles['user-card__email']}>{user.email}</span>
-                                <span className={styles['user-card__phone']}>{user.phone}</span>
+                                <span>{user.position}</span>
+                                <span>{user.email}</span>
+                                <span>{user.phone}</span>
                             </p>
                         </div>
                     ))
@@ -53,7 +58,9 @@ export const SectionUsers = () => {
             </div>
 
             {!isLastPage && !isLoading && (
-                <Button label='Show more' onClick={handleShowMore} />
+                <div className={styles['users__button-wrapper']}>
+                    <Button label='Show more' onClick={handleShowMore} />
+                </div>
             )}
         </section>
     );

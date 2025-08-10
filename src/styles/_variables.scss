@@ -1,19 +1,25 @@
-// $primary-color: #F4E041;
-// $secondary-color: #00BDD3;
 $base-title-color: #000000;
+$base-bg-color: #FFF;
+$base-text-inactive: #7E7E7E;
 
 $background-color: #F8F8F8;
-$header-bg-color: #FFF;
-
+$header-bg-color: $base-bg-color;
+$button-bg-upload: $base-bg-color;
 $button-bg: #F4E041;
 $button-bg-hover: #FFE302;
 $button-bg-disabled: #B4B4B4;
+$card-bg: $base-bg-color;
 
 $hero-title-color: white;
 $users-title-color: $base-title-color;
 $form-title-color: $base-title-color;
 
 $hero-text-color: white;
+$mistake-text-color: $base-text-inactive;
+$upload-text-color: $base-text-inactive;
+
+$input-border-color: $base-text-inactive;
+$btn-border-upload: $base-title-color;
 
 
 
