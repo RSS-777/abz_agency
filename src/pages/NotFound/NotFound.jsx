@@ -8,7 +8,7 @@ const NotFound = () => {
 
   const handleLink = () => {
     navigate('/')
-  }
+  };
 
   return (
     <main className={styles['not-found']}>

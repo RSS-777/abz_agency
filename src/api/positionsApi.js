@@ -22,10 +22,10 @@ export const getPositions = async () => {
             }
         }
 
-        const data = await response.json();
+        const data = await response.json()
 
         if (!data.success) {
-            throw new Error(data.message || 'Unknown API error.');
+            throw new Error(data.message || 'Unknown API error.')
         }
 
         return {
@@ -34,8 +34,9 @@ export const getPositions = async () => {
         };
     } catch (error) {
         if (import.meta.env.VITE_APP_MODE === 'development') {
-            console.error('Get positions data error:', error);
+            console.error('Get positions data error:', error)
         }
+
         return { success: false, message: error.message };
     }
 };

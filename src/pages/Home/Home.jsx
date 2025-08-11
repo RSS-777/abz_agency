@@ -3,7 +3,7 @@ import { SectionHero } from "../../components/SectionHero/SectionHero";
 import { SectionUsers } from "../../components/SectionUsers/SectionUsers";
 import { SectionForm } from "../../components/SectionForm/SectionForm";
 import style from './Home.module.scss'
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async'; // React Helmet used to set the page title and meta tags for SEO
 
 const Home = () => {
     return (

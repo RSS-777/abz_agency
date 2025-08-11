@@ -24,10 +24,11 @@ export const SectionForm = () => {
     const dispatch = useDispatch()
     const isSuccess = useSelector(state => state.auth.isSuccess)
 
+    // Store the name of the selected image file
     useEffect(() => {
         if (watchFile && watchFile.length > 0) {
             const fileName = watchFile[0].name.length > 10
-                ? watchFile[0].name.slice(0, 20) + '...'
+                ? watchFile[0].name.slice(0, 20) + '...' // truncate the name if it's longer than 20 characters;
                 : watchFile[0].name;
             setNameFile(fileName);
         } else {
@@ -39,12 +40,14 @@ export const SectionForm = () => {
         fetchPosition()
     }, []);
 
+    // Trigger file input click programmatically
     const handleUploadClick = (e) => {
         e.preventDefault()
 
         inputFileRef.current?.click()
     };
 
+    // Getting positions
     const fetchPosition = async () => {
         const response = await getPositions()
 
@@ -53,6 +56,7 @@ export const SectionForm = () => {
         } // Error handling is done inside the API function (getPositions)
     };
 
+    // Submit form and reset on success
     const onSubmit = async (data) => {
         if (!data) return
 
@@ -63,7 +67,7 @@ export const SectionForm = () => {
             reset()
             setNameFile('Upload your photo')
         }
-    }
+    };
 
     return (
         <section className={styles['section-form']}>

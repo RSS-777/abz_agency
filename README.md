@@ -23,11 +23,22 @@ Key features include:
 * [X] **Redux Toolkit**: Official, opinionated toolset for efficient Redux development.  
 * [X] **React Hook Form**: Performant, flexible library for handling forms in React.  
 * [X] **Sass**: CSS preprocessor that adds power and elegance to the basic language.
+* [X] **React Helmet Async**: – Manage document head for improved SEO and metadata handling.
+* [X] **gh-pages**: gh-pages – Easy deployment of the application to GitHub Pages.
 
 ___
 ### Screenshot
-<div style="display: flex; gap: 8px">
-    <img src="./public/screenshots" width="300px" height="180px">
-
+<div style="display: flex; flex-direction: column;  gap: 8px">
+    <div>
+        <img src="./public/screenshots/pageSpeed_mobile.PNG" width="45%">
+        <img src="./public/screenshots/pageSpeed_desktop.PNG" width="45%" >
+    </div>
+    <div>
+        <img src="./public/screenshots/Lighthouse_mobile.PNG" width="45%" >
+        <img src="./public/screenshots/Lighthouse_desktop.PNG" width="45%" >
+    </div>
+    <div>
+        <img src="./public/screenshots/тест ААААА.PNG" width="45%">
+    </div>
 </div>
 

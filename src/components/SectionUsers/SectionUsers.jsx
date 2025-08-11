@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from './SectionUsers.module.scss';
 import { getUsers } from '../../api/usersApi';
 import { Button } from "../Button/Button";
@@ -9,9 +9,9 @@ export const SectionUsers = () => {
     const [users, setUsers] = useState([])
     const [totalPages, setTotalPages] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const dispatch = useDispatch()
     const isSuccess = useSelector(state => state.auth.isSuccess)
 
+    // Fetching and sorting users
     const fetchUsers = async (currentPage) => {
         setIsLoading(true)
         const response = await getUsers(currentPage, 6)
@@ -30,10 +30,12 @@ export const SectionUsers = () => {
         setIsLoading(false)
     };
 
+    // Call fetch when page changes
     useEffect(() => {
         fetchUsers(page)
     }, [page]);
 
+    // Reload and reset user pages after successful registration
     useEffect(() => {
         if (isSuccess) {
             if (page === 1) {
@@ -44,6 +46,7 @@ export const SectionUsers = () => {
         }
     }, [isSuccess]);
 
+    // Show more users
     const handleShowMore = () => {
         setPage(prev => prev + 1)
     };

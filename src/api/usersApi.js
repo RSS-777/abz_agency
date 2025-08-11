@@ -8,7 +8,7 @@ export const getUsers = async (page = 1, count = 6) => {
                     'Content-Type': 'application/json',
                 },
             }
-        );
+        )
 
         if (!response.ok) {
             switch (response.status) {
@@ -23,7 +23,7 @@ export const getUsers = async (page = 1, count = 6) => {
             }
         }
 
-        const data = await response.json();
+        const data = await response.json()
 
         return {
             success: true,
@@ -33,24 +33,24 @@ export const getUsers = async (page = 1, count = 6) => {
         };
     } catch (error) {
         if (import.meta.env.VITE_APP_MODE === 'development') {
-            console.error('Get users data error:', error);
+            console.error('Get users data error:', error)
         }
 
-        return { success: false, message: error.message };
+        return { success: false, message: error.message }
     }
 };
 
 export const postUser = async (data) => {
     try {
-        const tokenRes = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token');
-        if (!tokenRes.ok) throw new Error('Failed to get token.');
-        const { token } = await tokenRes.json();
+        const tokenRes = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token')
+        if (!tokenRes.ok) throw new Error('Failed to get token.')
 
+        const { token } = await tokenRes.json()
         const formData = new FormData()
         formData.append('name', data.name)
         formData.append('email', data.email)
         formData.append('phone', data.phone)
-        formData.append('position_id', Number(data.position));
+        formData.append('position_id', Number(data.position))
         formData.append('photo', data.upload[0])
 
         const response = await fetch(
@@ -62,24 +62,24 @@ export const postUser = async (data) => {
                 },
                 body: formData
             }
-        );
+        )
 
         if (!response.ok) {
             switch (response.status) {
                 case 401:
-                    throw new Error('The token expired.');
+                    throw new Error('The token expired.')
                 case 409:
-                    throw new Error('User with this phone or email already exists.');
+                    throw new Error('User with this phone or email already exists.')
                 case 422:
-                    throw new Error('Validation failed.');
+                    throw new Error('Validation failed.')
                 case 500:
-                    throw new Error('Server error.');
+                    throw new Error('Server error.')
                 default:
-                    throw new Error('Unknown error.');
+                    throw new Error('Unknown error.')
             }
         }
 
-        const result = await response.json();
+        const result = await response.json()
 
         return {
             success: true,
@@ -88,9 +88,9 @@ export const postUser = async (data) => {
         };
     } catch (error) {
         if (import.meta.env.VITE_APP_MODE === 'development') {
-            console.error('Post user error:', error);
+            console.error('Post user error:', error)
         }
 
-        return { success: false, message: error.message };
+        return { success: false, message: error.message }
     }
 };
