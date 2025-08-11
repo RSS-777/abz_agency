@@ -26,6 +26,8 @@ Key features include:
 * [X] **React Helmet Async**: – Manage document head for improved SEO and metadata handling.
 * [X] **gh-pages**: gh-pages – Easy deployment of the application to GitHub Pages.
 
+### About Deployment and WebPageTest Scores
+>My application is deployed on GitHub Pages, which unfortunately limits some server-side optimizations such as advanced caching configurations and image compression settings. However, the app fully meets all your requirements except: c. Checking the performance on WebPageTest to achieve perfect AAAAAA scores. Due to the hosting restrictions, I’m unable to implement some optimizations that affect the WebPageTest grading, but the functionality and overall performance remain solid.
 ___
 ### Screenshot
 <div style="display: flex; flex-direction: column;  gap: 8px">
