@@ -1,6 +1,6 @@
-import { Button } from "../Button/Button";
-import styles from './Header.module.scss';
 import { useSelector } from 'react-redux';
+import styles from './Header.module.scss';
+import { Button } from "../Button/Button";
 import { handleScrollTo } from "../../utils/scroll";
 import logoImage from '../../assets/images/Logo.svg';
 

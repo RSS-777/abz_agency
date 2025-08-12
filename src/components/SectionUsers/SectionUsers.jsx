@@ -61,11 +61,11 @@ export const SectionUsers = () => {
                     ? users.map((user, index) => (
                         <div key={`${user.id}-${index}`} className={styles['user-card']}>
                             <img src={user.photo} alt={user.name} className={styles['user-card__img']} />
-                            <p>{user.name}</p>
+                            <p className={styles['user-card__name']} >{user.name}</p>
                             <p className={styles['user-card__block-info']}>
-                                <span>{user.position}</span>
-                                <span>{user.email}</span>
-                                <span>{user.phone}</span>
+                                <span className={styles['user-card__position']} >{user.position}</span>
+                                <span className={styles['user-card__email']} title={user.email} >{user.email}</span>
+                                <span >{user.phone}</span>
                             </p>
                         </div>
                     ))

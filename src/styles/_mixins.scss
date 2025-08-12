@@ -1,0 +1,9 @@
+@mixin ellipsis-text($max-width: 344px, $padding-x: 20px) {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: $max-width;
+  padding: 0 $padding-x;
+  cursor: help;
+};
