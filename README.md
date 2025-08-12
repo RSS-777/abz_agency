@@ -51,7 +51,7 @@ Key features include:
         <img src="./public/screenshots/Lighthouse_desktop.PNG" width="45%" >
     </div>
     <div>
-        <img src="./public/screenshots/webpagetestAAAAA.PNG" width="45%">
+        <img src="./public/screenshots/webpagetestAAAAAA.PNG" width="45%">
     </div>
 </div>
 
