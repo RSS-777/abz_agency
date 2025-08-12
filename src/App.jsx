@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-     <Router basename="/abz_agency">
+     <Router>
       <Routes>
          <Route path='/' element={<Home />} />
          <Route path='*' element={<NotFound />} />

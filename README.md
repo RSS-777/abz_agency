@@ -3,7 +3,7 @@
 
 ---
 
-[Link to the live site (*abz_agency*)](https://rss-777.github.io/abz_agency)
+[Link to the live site (*abz_agency*)](https://test-project.if.ua/)
 
 ---
 
@@ -16,6 +16,21 @@ Key features include:
 * A user registration form with frontend validation and data submission through REST API (POST request).  
 * After successful registration, the user list updates and resets to the first page.
 
+## Deployment & Infrastructure
+* The project was successfully deployed on a production server, ensuring stable and performant hosting.
+* A custom domain was connected for a professional and user-friendly URL experience: https://test-project.if.ua/.
+* An SSL certificate was obtained and configured, enabling HTTPS for secure data transfer and improved SEO rankings.
+* All static assets and images were optimized for fast loading times, reducing bandwidth usage and improving user experience.
+* Project files and build artifacts are properly organized and maintained on the server.
+
+## Testing & Documentation
+* All tests specified in the project documentation have passed successfully, ensuring compliance with the defined requirements and quality standards.
+* Code and project structure strictly adhere to the provided documentation and best practices, facilitating maintainability and scalability.
+
+## SEO & Performance Enhancements
+* Added React Helmet Async to manage document head tags dynamically, enhancing SEO by setting appropriate metadata, titles, and descriptions.
+* Image assets were optimized and compressed without losing quality to improve page load speeds and performance metrics.
+
 ### Tech Stack  
 * [X] **React 18**: JavaScript library for building user interfaces.  
 * [X] **Vite**: Fast and modern build tool for frontend development.  
@@ -24,11 +39,7 @@ Key features include:
 * [X] **React Hook Form**: Performant, flexible library for handling forms in React.  
 * [X] **Sass**: CSS preprocessor that adds power and elegance to the basic language.
 * [X] **React Helmet Async**: – Manage document head for improved SEO and metadata handling.
-* [X] **gh-pages**: gh-pages – Easy deployment of the application to GitHub Pages.
 
-### About Deployment and WebPageTest Scores
->My application is deployed on GitHub Pages, which unfortunately limits some server-side optimizations such as advanced caching configurations and image compression settings. However, the app fully meets all your requirements except: c. Checking the performance on WebPageTest to achieve perfect AAAAAA scores. Due to the hosting restrictions, I’m unable to implement some optimizations that affect the WebPageTest grading, but the functionality and overall performance remain solid.
-___
 ### Screenshot
 <div style="display: flex; flex-direction: column;  gap: 8px">
     <div>
@@ -40,7 +51,7 @@ ___
         <img src="./public/screenshots/Lighthouse_desktop.PNG" width="45%" >
     </div>
     <div>
-        <img src="./public/screenshots/тест ААААА.PNG" width="45%">
+        <img src="./public/screenshots/webpagetestAAAAA.PNG" width="45%">
     </div>
 </div>
 
