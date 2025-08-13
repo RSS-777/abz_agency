@@ -1,14 +1,13 @@
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import styles from './SectionForm.module.scss';
 import { Button } from '../Button/Button';
 import { getPositions } from '../../api/positionsApi';
 import { postUser } from '../../api/usersApi';
-import { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { setSuccess } from '../../store/auth/authSlice';
 import { SuccessMessage } from '../SuccessMessage/SuccessMessage';
+import styles from './SectionForm.module.scss';
 
 export const SectionForm = () => {
     const [positions, setPositions] = useState([])
@@ -89,6 +88,7 @@ export const SectionForm = () => {
                                     placeholder='Your name'
                                     className={styles['form__input']}
                                     aria-invalid={errors.name ? "true" : "false"}
+                                    autoComplete="name"
                                     {...register('name', {
                                         required: 'Field must not be empty!',
                                         pattern: {
@@ -118,6 +118,7 @@ export const SectionForm = () => {
                                     placeholder='Email'
                                     className={styles['form__input']}
                                     aria-invalid={errors.email ? "true" : "false"}
+                                    autoComplete="email"
                                     {...register('email', {
                                         required: 'Field must not be empty!',
                                         pattern: {
@@ -139,6 +140,7 @@ export const SectionForm = () => {
                                     placeholder='Phone'
                                     className={styles['form__input']}
                                     aria-invalid={errors.phone ? "true" : "false"}
+                                    autoComplete="tel"
                                     {...register('phone', {
                                         required: 'Field must not be empty!',
                                         pattern: {

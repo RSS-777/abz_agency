@@ -41,17 +41,18 @@ Key features include:
 * [X] **React Helmet Async**: – Manage document head for improved SEO and metadata handling.
 
 ### Screenshot
-<div style="display: flex; flex-direction: column;  gap: 8px">
-    <div>
+<div style="display: flex; flex-direction: column; gap: 5px">
+    <div style="display: flex; gap: 5px">
         <img src="./public/screenshots/pageSpeed_mobile.PNG" width="45%">
         <img src="./public/screenshots/pageSpeed_desktop.PNG" width="45%" >
     </div>
-    <div>
+    <div style="display: flex; gap: 5px">
         <img src="./public/screenshots/Lighthouse_mobile.PNG" width="45%" >
         <img src="./public/screenshots/Lighthouse_desktop.PNG" width="45%" >
     </div>
-    <div>
+    <div style="display: flex; gap: 5px">
         <img src="./public/screenshots/webpagetestAAAAAA.PNG" width="45%">
+        <img src="./public/screenshots/users.PNG" width="45%">
     </div>
 </div>
 
